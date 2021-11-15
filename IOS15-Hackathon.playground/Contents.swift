@@ -100,6 +100,7 @@ class Bank: BankApi {
     func checkUserPhone(phone: String) -> Bool {                            // Проверка телефона пользователя
         // Тут скоро будет код
         return true
+    }
     func checkMaxUserCash(cash: Float) -> Bool {                            // Проверить максимально возможную сумму для снятия
         // Тут скоро будет код
         return true
@@ -186,6 +187,6 @@ enum TextErrors: String {
 let vasya = User (name: "Василий", cardId: "4000 5000 6000 7000", cardPin: 1234, phone: "8(985)123-45-67", cash: 10000, bankDepositNumber: "40817864378549861204", bankDeposit: 50000, phoneBalance: 650, cardBalance: 35000)
 
 // Создаем экземпляр банкомата
-//let atm = ATM(userCardId: vasya.userCardId, userCardPin: 1234, someBank: Bank(user: vasya), action: .balanceRequest)
-//
-//ATM(userCardId: "4000 5000 6000 7000", userCardPin: 1234, someBank: Bank(user: vasya), action: .balanceRequest, paymentMethod: nil)
+let atm = ATM(userCardId: vasya.userCardId, userCardPin: 1234, someBank: Bank(user: vasya), action: .balanceRequest)
+
+ATM(userCardId: "4000 5000 6000 7000", userCardPin: 1234, someBank: Bank(user: vasya), action: .balanceRequest, paymentMethod: nil)
