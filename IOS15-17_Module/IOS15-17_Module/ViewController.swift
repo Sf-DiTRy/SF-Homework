@@ -74,13 +74,6 @@ class ViewController: UIViewController {
     @IBAction func persentButton(_ sender: UIButton) {
         answerNumber = Double(inputNumber)! * 0.01
         resultLabel.text = String(answerNumber!)
-
-//        isInteger = answerNumber! - answerNumber!.rounded() == 0
-//        if isInteger {
-//            resultLabel.text = String(Int(answerNumber!))
-//        } else {
-//            resultLabel.text = String(answerNumber!)
-//        }
         inputNumber = String(answerNumber!)
     }
     
