@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="IOS15_21_7_Module_MiniGame" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view alpha="0.40000000000000002" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vqo-HP-8ju" userLabel="CircleViewOne" customClass="CustomCircleView" customModule="IOS15_21_7_Module_MiniGame" customModuleProvider="target">
+                                <rect key="frame" x="20" y="44" width="60" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="customCircleViewBackground">
+                                        <color key="value" systemColor="systemBlueColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="93I-Uz-nTZ" appends="YES" id="b9X-cO-qrp"/>
+                                </connections>
+                            </view>
+                            <view alpha="0.40000000000000002" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iDp-pg-xWn" userLabel="CircleViewTwo" customClass="CustomCircleView" customModule="IOS15_21_7_Module_MiniGame" customModuleProvider="target">
+                                <rect key="frame" x="175" y="44" width="64" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="customCircleViewBackground">
+                                        <color key="value" systemColor="systemBlueColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="VPU-PP-hVv" appends="YES" id="qzR-aJ-MEo"/>
+                                </connections>
+                            </view>
+                            <view alpha="0.40000000000000002" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="P1z-wz-56O" userLabel="CircleViewThree" customClass="CustomCircleView" customModule="IOS15_21_7_Module_MiniGame" customModuleProvider="target">
+                                <rect key="frame" x="330" y="44" width="64" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="customCircleViewBackground">
+                                        <color key="value" systemColor="systemBlueColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="eXs-le-P65" appends="YES" id="FRg-pc-IuC"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <connections>
+                        <outlet property="circleViewOne" destination="Vqo-HP-8ju" id="L8N-ED-1RI"/>
+                        <outlet property="circleViewThree" destination="P1z-wz-56O" id="ZF8-4G-hu5"/>
+                        <outlet property="circleViewTwo" destination="iDp-pg-xWn" id="AZQ-hu-RCB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="93I-Uz-nTZ" userLabel="PanGestureRecognizerOne">
+                    <connections>
+                        <action selector="panActionCircleViewOne:" destination="BYZ-38-t0r" id="HsM-bI-SKM"/>
+                        <outlet property="delegate" destination="BYZ-38-t0r" id="x9j-HY-q4Y"/>
+                    </connections>
+                </panGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="VPU-PP-hVv" userLabel="PanGestureRecognizerTwo">
+                    <connections>
+                        <action selector="panActionCircleViewTwo:" destination="BYZ-38-t0r" id="kLD-At-bF4"/>
+                        <outlet property="delegate" destination="BYZ-38-t0r" id="nSG-FJ-zyh"/>
+                    </connections>
+                </panGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="eXs-le-P65" userLabel="PanGestureRecognizerThree">
+                    <connections>
+                        <action selector="panActionCircleViewThree:" destination="BYZ-38-t0r" id="29r-Ie-fpc"/>
+                        <outlet property="delegate" destination="BYZ-38-t0r" id="naV-aj-38j"/>
+                    </connections>
+                </panGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="35" y="82"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
