@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="IOS15_21_5_Module_UIGestureRecognizer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I2P-i1-I9T" userLabel="Orange View">
+                                <rect key="frame" x="0.0" y="80" width="414" height="180"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="414" id="Kyf-7r-WBG"/>
+                                    <constraint firstAttribute="height" constant="180" id="Ohr-xT-Mjb"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gNN-KL-puO" userLabel="Indigo View">
+                                <rect key="frame" x="266" y="683" width="128" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="rf2-7e-5LJ" appends="YES" id="r8T-lP-jmy"/>
+                                    <outletCollection property="gestureRecognizers" destination="cHE-Nd-NN6" appends="YES" id="g7h-fb-P8Y"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OfU-la-XdT" userLabel="Purple View">
+                                <rect key="frame" x="20" y="518" width="128" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="EhL-oA-N6a" appends="YES" id="dBG-mu-Zfk"/>
+                                    <outletCollection property="gestureRecognizers" destination="FqQ-ir-uWd" appends="YES" id="sTw-tP-sPi"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="I2P-i1-I9T" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="B4q-XM-611"/>
+                            <constraint firstItem="I2P-i1-I9T" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="TLf-n4-twj"/>
+                            <constraint firstItem="I2P-i1-I9T" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="36" id="hxU-l7-IMa"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="indigoView" destination="gNN-KL-puO" id="Vgy-sx-Ygi"/>
+                        <outlet property="orangeView" destination="I2P-i1-I9T" id="CRY-wX-Lh4"/>
+                        <outlet property="purpleView" destination="OfU-la-XdT" id="K1w-oG-fsp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <gestureRecognizer id="FqQ-ir-uWd" userLabel="purpleMixingGesture" customClass="MixGesture" customModule="IOS15_21_5_Module_UIGestureRecognizer" customModuleProvider="target"/>
+                <gestureRecognizer id="cHE-Nd-NN6" userLabel="Indigo Mix Gesture" customClass="MixGesture" customModule="IOS15_21_5_Module_UIGestureRecognizer" customModuleProvider="target"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="EhL-oA-N6a" userLabel="Purple Pan Gesture Recognizer">
+                    <connections>
+                        <action selector="purplePanAction:" destination="BYZ-38-t0r" id="F5g-mX-2yX"/>
+                        <outlet property="delegate" destination="BYZ-38-t0r" id="2NF-AP-oxy"/>
+                    </connections>
+                </panGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="rf2-7e-5LJ" userLabel="Indigo Pan Gesture Recognizer">
+                    <connections>
+                        <action selector="panAction:" destination="BYZ-38-t0r" id="U5r-Af-tAE"/>
+                        <outlet property="delegate" destination="BYZ-38-t0r" id="NBP-y5-5aZ"/>
+                    </connections>
+                </panGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="35" y="68"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
