@@ -98,10 +98,8 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
             return
         }
         
-        let geasureCustomCircleView = gestureViewIdentifier(gesture: gestureView)   // определим с каким CustomCircleView имеем дело
-        
-        circleIntersects(сustomCircleView: geasureCustomCircleView) // определим с кем он пересекается и выполним необходимые действия
-        
+        circlesTransform(activeCircle: gestureView)
+
     }
     
     @IBAction func panActionCircleViewTwo(_ gesture: UIPanGestureRecognizer) {
@@ -122,10 +120,8 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
             return
         }
         
-        let geasureCustomCircleView = gestureViewIdentifier(gesture: gestureView)   // определим с каким CustomCircleView имеем дело
-        
-        circleIntersects(сustomCircleView: geasureCustomCircleView) // определим с кем он пересекается и выполним необходимые действия
-        
+        circlesTransform(activeCircle: gestureView)
+
     }
     
     @IBAction func panActionCircleViewThree(_ gesture: UIPanGestureRecognizer) {
@@ -146,9 +142,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
             return
         }
         
-        let geasureCustomCircleView = gestureViewIdentifier(gesture: gestureView)   // определим с каким CustomCircleView имеем дело
-        
-        circleIntersects(сustomCircleView: geasureCustomCircleView) // определим с кем он пересекается и выполним необходимые действия
+        circlesTransform(activeCircle: gestureView)
 
     }
     
@@ -169,10 +163,8 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         guard gesture.state == .ended else {
             return
         }
-        
-        let geasureCustomCircleView = gestureViewIdentifier(gesture: gestureView)   // определим с каким CustomCircleView имеем дело
-        
-        circleIntersects(сustomCircleView: geasureCustomCircleView) // определим с кем он пересекается и выполним необходимые действия
+
+        circlesTransform(activeCircle: gestureView)
 
     }
 
@@ -212,47 +204,60 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         }
     }
     
-    func circleIntersects(сustomCircleView: CustomCircleView) {
-        let circle = сustomCircleView
-        if circle != circleViewOne, circle.frame.intersects(circleViewOne.frame) {
-            circleViewOne.isHidden = true
-            circleTransform(gestureView: circle)
-        } else if circle != circleViewTwo, circle.frame.intersects(circleViewTwo.frame) {
-            circleViewTwo.isHidden = true
-            circleTransform(gestureView: circle)
-        } else if circle != circleViewThree, circle.frame.intersects(circleViewThree.frame) {
-            circleViewThree.isHidden = true
-            circleTransform(gestureView: circle)
-        } else if circle != circleViewFour, circle.frame.intersects(circleViewFour.frame) {
-            circleViewFour.isHidden = true
-            circleTransform(gestureView: circle)
-        } else if circle != circleViewFive, circle.frame.intersects(circleViewFive.frame) {
-            circleViewFive.isHidden = true
-            circleTransform(gestureView: circle)
-        } else if circle != circleViewSix, circle.frame.intersects(circleViewSix.frame) {
-            circleViewSix.isHidden = true
-            circleTransform(gestureView: circle)
-        } else if circle != circleViewSeven, circle.frame.intersects(circleViewSeven.frame) {
-            circleViewSeven.isHidden = true
-            circleTransform(gestureView: circle)
+    func circleIntersects(activeCircleView: CustomCircleView) -> CustomCircleView? {
+
+        let secondCircle: CustomCircleView
+
+        if activeCircleView != circleViewOne, activeCircleView.frame.intersects(circleViewOne.frame) {
+            secondCircle = circleViewOne
+        } else if activeCircleView != circleViewTwo, activeCircleView.frame.intersects(circleViewTwo.frame) {
+            secondCircle = circleViewTwo
+        } else if activeCircleView != circleViewThree, activeCircleView.frame.intersects(circleViewThree.frame) {
+            secondCircle = circleViewThree
+        } else if activeCircleView != circleViewFour, activeCircleView.frame.intersects(circleViewFour.frame) {
+            secondCircle = circleViewFour
+        } else if activeCircleView != circleViewFive, activeCircleView.frame.intersects(circleViewFive.frame) {
+            secondCircle = circleViewFive
+        } else if activeCircleView != circleViewSix, activeCircleView.frame.intersects(circleViewSix.frame) {
+            secondCircle = circleViewSix
+        } else if activeCircleView != circleViewSeven, activeCircleView.frame.intersects(circleViewSeven.frame) {
+            secondCircle = circleViewSeven
         } else {
-            print("no circleIntersects")
+            return nil
         }
+        return secondCircle
     }
     
     func circleTransform(gestureView: CustomCircleView) {
-        UIView.animate(withDuration: 2) {
-            gestureView.customCircleSubView.backgroundColor = .random()
-        }
-        
+
         let width = gestureView.customCircleSubView.frame.width
         let height = gestureView.customCircleSubView.frame.height
 
         gestureView.customCircleSubView.frame.size = CGSize(width: width + 2, height: height + 2)
-        gestureView.customCircleSubView.autoresizingMask = [.flexibleWidth, .flexibleHeight]    //  Определяем размещение в пределах заданных границ — autoresizingMask нам в помощь
-        gestureView.customCircleSubView.layer.cornerRadius = width / 2   //  Выставляем радиус границ равный половине ширины, чтобы получить круг
+        gestureView.customCircleSubView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        gestureView.customCircleSubView.layer.cornerRadius = width / 2
     }
     
+    func circlesTransform(activeCircle: UIView) {
+        let activeCustomCircleView = gestureViewIdentifier(gesture: activeCircle)   // определим с каким CustomCircleView имеем дело
+        guard let secondCustomCircleView = circleIntersects(activeCircleView: activeCustomCircleView) else { return }
+        
+        let width = secondCustomCircleView.customCircleSubView.frame.width
+        let height = secondCustomCircleView.customCircleSubView.frame.height
+        
+        activeCustomCircleView.center = CGPoint(x: self.view.bounds.maxX + activeCustomCircleView.frame.midX, y: self.view.bounds.maxY + activeCustomCircleView.frame.midY)
+        activeCustomCircleView.isHidden = true
+        
+        UIView.animate(withDuration: 2) {
+            secondCustomCircleView.customCircleSubView.backgroundColor = .random()
+            
+            secondCustomCircleView.customCircleSubView.frame.size = CGSize(width: width + 5, height: height + 5)
+            secondCustomCircleView.customCircleSubView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+            secondCustomCircleView.customCircleSubView.layer.cornerRadius = width / 2
+        }
+        
+    }
+
 }
 
 extension CGFloat {

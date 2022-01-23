@@ -13,10 +13,12 @@
 		4742CA6C278CC5DF003B9D78 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4742CA6A278CC5DF003B9D78 /* Main.storyboard */; };
 		4742CA6E278CC5E0003B9D78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4742CA6D278CC5E0003B9D78 /* Assets.xcassets */; };
 		4742CA71278CC5E0003B9D78 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4742CA6F278CC5E0003B9D78 /* LaunchScreen.storyboard */; };
+		4768439727940A6600D4DE70 /* CircleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4768439627940A6600D4DE70 /* CircleView.xib */; };
+		4768439927940D6800D4DE70 /* CustomCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4768439827940D6800D4DE70 /* CustomCircleView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4742CA61278CC5DF003B9D78 /* IOS15-21.7_Module.MiniGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IOS15-21.7_Module.MiniGame.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4742CA61278CC5DF003B9D78 /* IOS15-22.8_Module.Practice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IOS15-22.8_Module.Practice.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4742CA64278CC5DF003B9D78 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4742CA66278CC5DF003B9D78 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		4742CA68278CC5DF003B9D78 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +26,8 @@
 		4742CA6D278CC5E0003B9D78 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4742CA70278CC5E0003B9D78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4742CA72278CC5E0003B9D78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4768439627940A6600D4DE70 /* CircleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CircleView.xib; sourceTree = "<group>"; };
+		4768439827940D6800D4DE70 /* CustomCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCircleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,7 +44,7 @@
 		4742CA58278CC5DF003B9D78 = {
 			isa = PBXGroup;
 			children = (
-				4742CA63278CC5DF003B9D78 /* IOS15-21.7_Module.MiniGame */,
+				4742CA63278CC5DF003B9D78 /* IOS15-22.8_Module.Practice */,
 				4742CA62278CC5DF003B9D78 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -48,31 +52,33 @@
 		4742CA62278CC5DF003B9D78 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4742CA61278CC5DF003B9D78 /* IOS15-21.7_Module.MiniGame.app */,
+				4742CA61278CC5DF003B9D78 /* IOS15-22.8_Module.Practice.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		4742CA63278CC5DF003B9D78 /* IOS15-21.7_Module.MiniGame */ = {
+		4742CA63278CC5DF003B9D78 /* IOS15-22.8_Module.Practice */ = {
 			isa = PBXGroup;
 			children = (
+				4742CA6F278CC5E0003B9D78 /* LaunchScreen.storyboard */,
 				4742CA64278CC5DF003B9D78 /* AppDelegate.swift */,
 				4742CA66278CC5DF003B9D78 /* SceneDelegate.swift */,
-				4742CA68278CC5DF003B9D78 /* ViewController.swift */,
 				4742CA6A278CC5DF003B9D78 /* Main.storyboard */,
+				4742CA68278CC5DF003B9D78 /* ViewController.swift */,
+				4768439627940A6600D4DE70 /* CircleView.xib */,
+				4768439827940D6800D4DE70 /* CustomCircleView.swift */,
 				4742CA6D278CC5E0003B9D78 /* Assets.xcassets */,
-				4742CA6F278CC5E0003B9D78 /* LaunchScreen.storyboard */,
 				4742CA72278CC5E0003B9D78 /* Info.plist */,
 			);
-			path = "IOS15-21.7_Module.MiniGame";
+			path = "IOS15-22.8_Module.Practice";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		4742CA60278CC5DF003B9D78 /* IOS15-21.7_Module.MiniGame */ = {
+		4742CA60278CC5DF003B9D78 /* IOS15-22.8_Module.Practice */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4742CA75278CC5E0003B9D78 /* Build configuration list for PBXNativeTarget "IOS15-21.7_Module.MiniGame" */;
+			buildConfigurationList = 4742CA75278CC5E0003B9D78 /* Build configuration list for PBXNativeTarget "IOS15-22.8_Module.Practice" */;
 			buildPhases = (
 				4742CA5D278CC5DF003B9D78 /* Sources */,
 				4742CA5E278CC5DF003B9D78 /* Frameworks */,
@@ -82,9 +88,9 @@
 			);
 			dependencies = (
 			);
-			name = "IOS15-21.7_Module.MiniGame";
+			name = "IOS15-22.8_Module.Practice";
 			productName = "IOS15-21.7_Module.MiniGame";
-			productReference = 4742CA61278CC5DF003B9D78 /* IOS15-21.7_Module.MiniGame.app */;
+			productReference = 4742CA61278CC5DF003B9D78 /* IOS15-22.8_Module.Practice.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -102,7 +108,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 4742CA5C278CC5DF003B9D78 /* Build configuration list for PBXProject "IOS15-21.7_Module.MiniGame" */;
+			buildConfigurationList = 4742CA5C278CC5DF003B9D78 /* Build configuration list for PBXProject "IOS15-22.8_Module.Practice" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -115,7 +121,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4742CA60278CC5DF003B9D78 /* IOS15-21.7_Module.MiniGame */,
+				4742CA60278CC5DF003B9D78 /* IOS15-22.8_Module.Practice */,
 			);
 		};
 /* End PBXProject section */
@@ -125,6 +131,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4768439727940A6600D4DE70 /* CircleView.xib in Resources */,
 				4742CA71278CC5E0003B9D78 /* LaunchScreen.storyboard in Resources */,
 				4742CA6E278CC5E0003B9D78 /* Assets.xcassets in Resources */,
 				4742CA6C278CC5DF003B9D78 /* Main.storyboard in Resources */,
@@ -139,6 +146,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4742CA69278CC5DF003B9D78 /* ViewController.swift in Sources */,
+				4768439927940D6800D4DE70 /* CustomCircleView.swift in Sources */,
 				4742CA65278CC5DF003B9D78 /* AppDelegate.swift in Sources */,
 				4742CA67278CC5DF003B9D78 /* SceneDelegate.swift in Sources */,
 			);
@@ -217,7 +225,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.7;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -272,7 +280,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.7;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -291,18 +299,20 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = A5VB8H4CNT;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "IOS15-21.7_Module.MiniGame/Info.plist";
+				INFOPLIST_FILE = "IOS15-22.8_Module.Practice/Info.plist";
+				"INFOPLIST_FILE[sdk=*]" = "IOS15-22.8_Module.Practice/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.7;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "Sf-DiTRy.IOS15-21-7-Module-MiniGame";
+				PRODUCT_BUNDLE_IDENTIFIER = "IOS15-22.8-Module.Practice";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -319,18 +329,19 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = A5VB8H4CNT;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "IOS15-21.7_Module.MiniGame/Info.plist";
+				INFOPLIST_FILE = "IOS15-22.8_Module.Practice/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.7;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "Sf-DiTRy.IOS15-21-7-Module-MiniGame";
+				PRODUCT_BUNDLE_IDENTIFIER = "IOS15-22.8-Module.Practice";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -341,7 +352,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4742CA5C278CC5DF003B9D78 /* Build configuration list for PBXProject "IOS15-21.7_Module.MiniGame" */ = {
+		4742CA5C278CC5DF003B9D78 /* Build configuration list for PBXProject "IOS15-22.8_Module.Practice" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4742CA73278CC5E0003B9D78 /* Debug */,
@@ -350,7 +361,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4742CA75278CC5E0003B9D78 /* Build configuration list for PBXNativeTarget "IOS15-21.7_Module.MiniGame" */ = {
+		4742CA75278CC5E0003B9D78 /* Build configuration list for PBXNativeTarget "IOS15-22.8_Module.Practice" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4742CA76278CC5E0003B9D78 /* Debug */,
