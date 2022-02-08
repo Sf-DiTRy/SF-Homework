@@ -28,6 +28,7 @@ class Model {   //  Описываем модель, которая обраба
     ]
     
     var sortedByIncrease: Bool = true   //  Переменная описывающая тип текущей сортировки массива задач
+    var editButtonClicked: Bool = true   //  Переменная описывающая состояние нажатия кнопки редактирования
     
     func addTask(taskText: String, taskCheck: Bool = false) {   //  Модель должна уметь добавлять новые элементы в массив задач без пометки о выполнении
         toDoTasks.append(Task(taskText: taskText, taskCheck: taskCheck))

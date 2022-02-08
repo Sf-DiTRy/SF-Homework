@@ -36,6 +36,13 @@ class ToDoCell: UITableViewCell {   //  Создаем ячейку с нужн�
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
+        toDoCellEditButton.isEnabled = true
+        toDoCellEditButton.addTarget(self, action: #selector(editButtonPressed), for: .touchUpInside)
+        
+        toDoCellDeleteButton.isEnabled = true
+        toDoCellDeleteButton.addTarget(self, action: #selector(deleteButtonPressed), for: .touchUpInside)
+        
         setCellsSubviews()  //  Выставляем сабвью
         setCellsConstraints()   //  Выставляем констрейнты
       
