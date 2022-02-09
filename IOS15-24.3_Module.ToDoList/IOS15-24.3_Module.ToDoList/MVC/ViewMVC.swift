@@ -17,51 +17,20 @@ class ToDoCell: UITableViewCell {   //  Создаем ячейку с нужн�
     
     var delegate: ToDoCellCellDelegate? //  Создаем делегата, который соответствует протоколу. Действовать будет ViewControllerMVC при нажатии соответствующих кнопок ячейки.
     
-    var toDoCellEditButton: UIButton = {    //  Добавляем кнопку изменения текста задачи
-        let button = UIButton()
-        button.contentMode = .scaleAspectFill
-        button.setImage(UIImage(systemName: "square.and.pencil"), for: UIControl.State.normal)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.clipsToBounds = true
-        return button
-    }()
-    var toDoCellDeleteButton: UIButton = {  //  Добавляем кнопку удаления задачи
-        let button = UIButton()
-        button.contentMode = .scaleAspectFill
-        button.setImage(UIImage(systemName: "trash"), for: UIControl.State.normal)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.clipsToBounds = true
-        return button
-    }()
+    var toDoCellEditButton = UIButton()
+    var toDoCellDeleteButton = UIButton()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
-        toDoCellEditButton.isEnabled = true
-        toDoCellEditButton.addTarget(self, action: #selector(editButtonPressed), for: .touchUpInside)
-        
-        toDoCellDeleteButton.isEnabled = true
-        toDoCellDeleteButton.addTarget(self, action: #selector(deleteButtonPressed), for: .touchUpInside)
-        
+
         setCellsSubviews()  //  Выставляем сабвью
-        setCellsConstraints()   //  Выставляем констрейнты
-      
+        setTitle()
+        setupToDoCellEditButton()   //  Устанавливаем кнопку toDoCellEditButton
+        setupToDoCellDeleteButton() //  Устанавливаем кнопку toDoCellDeleteButton
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-    }
-    
-    func setCellsConstraints() {    //  Устанавливаем констрейнты для кнопок toDoCellDeleteButton и toDoCellEditButton
-        self.toDoCellDeleteButton.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
-        self.toDoCellDeleteButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -50).isActive = true
-        self.toDoCellDeleteButton.widthAnchor.constraint(equalToConstant: 24).isActive = true
-        self.toDoCellDeleteButton.heightAnchor.constraint(equalToConstant: 24).isActive = true
-        
-        NSLayoutConstraint.activate([toDoCellEditButton.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-                                     toDoCellEditButton.trailingAnchor.constraint(equalTo: self.toDoCellDeleteButton.leadingAnchor, constant: -10),
-                                     toDoCellEditButton.widthAnchor.constraint(equalToConstant: 24),
-                                     toDoCellEditButton.heightAnchor.constraint(equalToConstant: 24)])
     }
     
     func setCellsSubviews() {   //  Выводим кнопочки на ячейку
@@ -69,20 +38,51 @@ class ToDoCell: UITableViewCell {   //  Создаем ячейку с нужн�
         self.addSubview(toDoCellDeleteButton)
     }
     
+    func setTitle() {
+        NSLayoutConstraint.activate([self.contentView.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+                                     self.contentView.leadingAnchor.constraint(equalTo: self.leadingAnchor)])
+    }
+    
+    func setupToDoCellEditButton() {
+        toDoCellEditButton.contentMode = .scaleAspectFill
+        toDoCellEditButton.setImage(UIImage(systemName: "square.and.pencil"), for: UIControl.State.normal)
+        toDoCellEditButton.translatesAutoresizingMaskIntoConstraints = false
+        toDoCellEditButton.clipsToBounds = true
+        
+        toDoCellEditButton.addTarget(self, action: #selector(editButtonPressed), for: .touchUpInside)
+        
+        NSLayoutConstraint.activate([toDoCellEditButton.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+                                     toDoCellEditButton.trailingAnchor.constraint(equalTo: self.toDoCellDeleteButton.leadingAnchor, constant: -10),
+                                     toDoCellEditButton.widthAnchor.constraint(equalToConstant: 24),
+                                     toDoCellEditButton.heightAnchor.constraint(equalToConstant: 24)])
+        self.addSubview(toDoCellEditButton)
+
+    }
+    
+    func setupToDoCellDeleteButton() {
+        toDoCellDeleteButton.contentMode = .scaleAspectFill
+        toDoCellDeleteButton.setImage(UIImage(systemName: "trash"), for: UIControl.State.normal)
+        toDoCellDeleteButton.translatesAutoresizingMaskIntoConstraints = false
+        toDoCellDeleteButton.clipsToBounds = true
+        toDoCellDeleteButton.isEnabled = true
+        toDoCellDeleteButton.addTarget(self, action: #selector(deleteButtonPressed), for: .touchUpInside)
+        
+        self.toDoCellDeleteButton.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
+        self.toDoCellDeleteButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -50).isActive = true
+        self.toDoCellDeleteButton.widthAnchor.constraint(equalToConstant: 24).isActive = true
+        self.toDoCellDeleteButton.heightAnchor.constraint(equalToConstant: 24).isActive = true
+        self.addSubview(toDoCellDeleteButton)
+
+    }
+    
     @objc func editButtonPressed() {    //  Кнопка Редактировать
         print("editButtonPressed")
-//        delegate?.editToDoCell(cell: self)
+        delegate?.editToDoCell(cell: self)
     }
     
     @objc func deleteButtonPressed() {    //  Кнопка Удалить
         print("deleteButtonPressed")
-        
-        //  Пробую вывести Алерт при нажатии этой кнопки. Просто так, тест
-        let alert = UIAlertController(title: "Title", message: "Message", preferredStyle: .alert)
-        let leftButton = UIAlertAction(title: "Left", style: .default, handler: nil)
-        alert.addAction(leftButton)
-        alert.present(alert, animated: true, completion: nil)
-//        delegate?.deleteToDoCell(cell: self)
+        delegate?.deleteToDoCell(cell: self)
     }
     
 }
