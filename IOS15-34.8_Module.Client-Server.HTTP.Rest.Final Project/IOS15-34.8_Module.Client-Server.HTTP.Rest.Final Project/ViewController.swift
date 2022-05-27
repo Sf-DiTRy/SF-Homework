@@ -18,16 +18,14 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var requestTextView: UITextView!
     
-    let dispatchQueue = DispatchQueue(label: "DispatchQueue")
     let adress = URL(string: "https://jsonplaceholder.typicode.com")
     
     var idPost = String()
-    var text = ""
     var alert = UIAlertController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        requestTextView.text = text
+        requestTextView.text = ""
     }
 
     @IBAction func requestButton(_ sender: UIButton) {
@@ -43,15 +41,8 @@ class ViewController: UIViewController {
         //   Создаем алерту кнопку
         let confirmAlertButton = UIAlertAction(title: "Отправить", style: .cancel) { send in
             guard let alertText = self.alert.textFields?[0].text else { return }
-            self.dispatchQueue.sync {
-                self.idPost = alertText
-                self.createRequest()
-            }
-            self.dispatchQueue.sync {
-                sleep(1)
-                self.requestTextView.text = self.text
-                print("requestTextView.text = self.text COMPLETED")
-            }
+            self.idPost = alertText
+            self.createRequest()
         }
         alert.addAction(confirmAlertButton)
         present(alert, animated: true, completion: nil) //  Выводим алерт с анимацией
@@ -82,8 +73,10 @@ class ViewController: UIViewController {
 
                   error == nil else { return }
             // Переменной text присваиваем значение результата
-            self.text = dataString
-            print("ВОТ ЧТО ПОПАЛО В ТЕКСТ - \(self.text)")
+            DispatchQueue.main.sync {
+                self.requestTextView.text = dataString
+            }
+            print("ВОТ ЧТО ПРИШЛО В ОТВЕТ - \(data)")
             }
         task.resume()
     }
