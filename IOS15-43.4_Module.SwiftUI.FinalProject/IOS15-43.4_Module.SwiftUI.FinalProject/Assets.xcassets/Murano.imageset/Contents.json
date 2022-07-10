@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "Murano.jpg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

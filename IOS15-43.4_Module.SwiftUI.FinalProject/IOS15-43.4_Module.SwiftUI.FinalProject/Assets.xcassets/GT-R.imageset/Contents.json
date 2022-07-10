@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "GT-R.jpg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
