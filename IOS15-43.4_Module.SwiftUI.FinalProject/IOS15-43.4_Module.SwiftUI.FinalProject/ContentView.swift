@@ -48,7 +48,7 @@ struct ModelsView: View {
                     Text(car.model)
                         .fontWeight(.bold)
                         .padding(.trailing)
-                        .font(.system(size: 24))
+                        .font(.system(size: 27))
                     Spacer()
                     Button("") {
                         print("Tapped")
