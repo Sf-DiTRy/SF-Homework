@@ -2,7 +2,7 @@
 //  SceneDelegate.swift
 //  IOS15-37.7_Module.Serialized&Deserialized.Final Project
 //
-//  Created by DiTRy on 12.06.2022.
+//  Created by DiTRy on 31.10.2022.
 //
 
 import UIKit

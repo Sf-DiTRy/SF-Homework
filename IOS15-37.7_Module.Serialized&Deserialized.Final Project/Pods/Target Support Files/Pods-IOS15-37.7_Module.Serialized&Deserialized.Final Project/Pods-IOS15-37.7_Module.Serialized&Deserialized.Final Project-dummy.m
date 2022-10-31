@@ -1,0 +1,5 @@
+#import <Foundation/Foundation.h>
+@interface PodsDummy_Pods_IOS15_37_7_Module_Serialized_Deserialized_Final_Project : NSObject
+@end
+@implementation PodsDummy_Pods_IOS15_37_7_Module_Serialized_Deserialized_Final_Project
+@end

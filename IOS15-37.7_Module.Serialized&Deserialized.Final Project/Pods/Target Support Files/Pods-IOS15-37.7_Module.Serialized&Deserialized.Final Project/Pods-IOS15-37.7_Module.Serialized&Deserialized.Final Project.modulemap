@@ -1,0 +1,6 @@
+framework module Pods_IOS15_37_7_Module_Serialized_Deserialized_Final_Project {
+  umbrella header "Pods-IOS15-37.7_Module.Serialized&Deserialized.Final Project-umbrella.h"
+
+  export *
+  module * { export * }
+}

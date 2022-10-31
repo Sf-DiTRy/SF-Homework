@@ -1,6 +1,0 @@
-framework module Pods_IOS15_Hackaton2_BankApp {
-  umbrella header "Pods-IOS15-Hackaton2.BankApp-umbrella.h"
-
-  export *
-  module * { export * }
-}
